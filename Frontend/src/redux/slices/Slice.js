@@ -24,7 +24,7 @@ export const counterSlice = createSlice({
                 state.wishlist = [...state.wishlist, action.payload]
             }
             else {
-                state.wishlist = state.wishlist.filter((elem) => elem.id == action.payload.id)
+                state.wishlist = state.wishlist.filter((elem) => elem.id != action.payload.id)
             }
             localStorage.setItem("wishlist", JSON.stringify(state.wishlist))
         },
