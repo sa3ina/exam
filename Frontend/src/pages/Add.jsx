@@ -61,6 +61,7 @@ const Add = () => {
                         name: '',
                         price: '',
                         desc: '',
+                        imgSrc: "https://jevelin.shufflehound.com/single-product/wp-content/uploads/sites/29/2018/03/Group-8211-copy-3.jpg?id=601"
                     }}
                     // validationSchema={SignupSchema}
                     onSubmit={values => {
