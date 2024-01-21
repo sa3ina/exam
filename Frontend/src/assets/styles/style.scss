@@ -10,8 +10,8 @@
 
 
     img {
-        width: 6%;
-        height: auto;
+        width: auto;
+        height: 30px;
     }
 
     .links {
@@ -57,7 +57,7 @@
         justify-content: center;
         align-items: center;
         max-width: 1300px;
-        gap: 100px;
+        // gap: 100px;
 
         .lifestyle {
             font-size: 80px;
@@ -84,6 +84,7 @@
     justify-content: center;
     align-items: center;
     padding-top: 100px;
+
 
     .container {
         display: flex;
@@ -337,4 +338,73 @@ button {
         display: flex;
         flex-direction: column;
     }
+}
+
+.footer {
+
+
+    .container {
+        display: flex;
+        background-color: #363636;
+        color: white;
+        justify-content: space-around;
+        padding: 50px 60px;
+
+    }
+}
+
+.hamburger {
+    color: white;
+    display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar {
+        .links {
+            display: none;
+        }
+
+        .buy {
+            display: none;
+        }
+    }
+
+    .features {
+        .container {
+            display: block;
+            text-align: center;
+
+            .lifestyle {
+                font-size: 20px;
+                font-weight: 300;
+            }
+        }
+    }
+
+    .shop {
+        .container {
+            text-align: center;
+        }
+    }
+
+
+
+    .watch {
+        width: 200px;
+    }
+}
+
+.open {
+    display: none;
+    margin-top: 20px;
+}
+
+.hamburgermenu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
 }

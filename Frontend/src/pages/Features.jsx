@@ -8,7 +8,7 @@ const Features = () => {
                     <p className='techn'>TECNOLOGY OF THE FUTURE</p>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, in? Lorem ipsum dolor sit amet.</p>
                 </div>
-                <img src="https://jevelin.shufflehound.com/single-product/wp-content/uploads/sites/29/2018/03/Vector-Smart-Object-copy-3.png" alt="" />
+                <img className='watch' src="https://jevelin.shufflehound.com/single-product/wp-content/uploads/sites/29/2018/03/Vector-Smart-Object-copy-3.png" alt="" />
             </div></div>
     )
 }
