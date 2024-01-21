@@ -7,7 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteUserData, fetchUserData, wishlistFunc } from '../redux/slices/Slice';
+import { deleteUserData, fetchUserData, postData, wishlistFunc } from '../redux/slices/Slice';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Helmet } from "react-helmet";
@@ -64,6 +64,7 @@ const Add = () => {
                     }}
                     // validationSchema={SignupSchema}
                     onSubmit={values => {
+                        dispatch(postData(values))
                         // same shape as initial values
                         console.log(values);
                     }}
