@@ -411,3 +411,16 @@ button {
     flex-direction: column;
     margin-top: 20px;
 }
+
+.buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.formik {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}

@@ -53,7 +53,7 @@ const Add = () => {
                 <title>Add</title>
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
-            <div>
+            <div className='formik'>
                 <h1>Post</h1>
                 <Formik
                     initialValues={{
@@ -89,16 +89,17 @@ const Add = () => {
                 </Formik>
             </div>
             <div className='table' >
-                <button onClick={() => {
-                    setType("az")
-                }}>A to Z</button>
-                <button onClick={() => {
-                    setType("za")
-                }}>Z to A</button>
-                <button onClick={() => {
-                    setType("price")
-                }}>price</button>
-
+                <div className='buttons'>
+                    <button onClick={() => {
+                        setType("az")
+                    }}>A to Z</button>
+                    <button onClick={() => {
+                        setType("za")
+                    }}>Z to A</button>
+                    <button onClick={() => {
+                        setType("price")
+                    }}>price</button>
+                </div>
                 <input type="text" placeholder='search smthng..' onChange={(e) => setSearch(e.target.value)} />
                 <TableContainer component={Paper}>
                     <Table sx={{ minWidth: 650 }} aria-label="simple table">
