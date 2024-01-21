@@ -16,6 +16,7 @@ import * as Yup from 'yup';
 import { v4 as uuidv4 } from 'uuid';
 const Add = () => {
     const dispatch = useDispatch();
+    const [type, setType] = useState("")
     const { data, loading, error, wishlist } = useSelector((state) => state.product);
     useEffect(() => {
         dispatch(fetchUserData());
@@ -34,6 +35,17 @@ const Add = () => {
             .required('Required'),
         email: Yup.string().email('Invalid email').required('Required'),
     });
+    const sorted = () => {
+        if (type == "az") {
+            return [...data].sort((a, b) => a.name.localeCompare(b.name))
+        } else if (type == "za") {
+            return [...data].sort((a, b) => b.name.localeCompare(a.name))
+
+        } else if (type == "price") {
+            return [...data].sort((a, b) => a.price - b.price)
+        }
+        return data;
+    }
     return (
         <>
             <Helmet>
@@ -76,6 +88,16 @@ const Add = () => {
                 </Formik>
             </div>
             <div className='table' >
+                <button onClick={() => {
+                    setType("az")
+                }}>A to Z</button>
+                <button onClick={() => {
+                    setType("za")
+                }}>Z to A</button>
+                <button onClick={() => {
+                    setType("price")
+                }}>price</button>
+
                 <input type="text" placeholder='search smthng..' onChange={(e) => setSearch(e.target.value)} />
                 <TableContainer component={Paper}>
                     <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -90,7 +112,7 @@ const Add = () => {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {filtered && filtered.map((row, i) => (
+                            {sorted().filter((elem) => elem.name.toLowerCase().includes(search.toLowerCase())).map((row, i) => (
                                 <TableRow
                                     key={i
                                     }
